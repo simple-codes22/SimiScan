@@ -1,0 +1,21 @@
+{
+    "hash": "0x3a17ec9a6f7435ba938a1cfb72a853cc3d197e4c0adffc2e11b025ce16d0c9da",
+    "parentHash": "0xb7524d1a89e4dba149e766df0d824f964a2f06039d94227d3e75763c89ea9625",
+    "number": 31244486,
+    "timestamp": 1650917288,
+    "difficulty": null,
+    "gasLimit": "BigNumber" { "_hex": "0x01c9c380", "_isBigNumber": true },
+    "gasUsed": "BigNumber" { "_hex": "0x070dbd", "_isBigNumber": true },
+    "miner": "0x596e8221A30bFe6e7eFF67Fee664A01C73BA3C56",
+    "extraData": "0xdb830303018c4f70656e457468657265756d86312e34382e30826c69",
+    "transactions": [
+      "0x6c2add2854f42789c2fc67b5c393ac3d0b1a0f3a0e7d4eda4a3fa11d1e7bbb83",
+        "0xd405e2971a49fb6b4587c87e87403afdc03724f35763e9bd4bc07eab5d66aebc",
+      "0x10f9c2c4a3d0fb70bbefbd5f6c823ca38544d9341beb878e4590985e24816020"
+    ],
+    "baseFeePerGas": "BigNumber" { "_hex": "0x07", "_isBigNumber": true },
+    "_difficulty": "BigNumber" {
+      "_hex": "0xfffffffffffffffffffffffffffffffe",
+      "_isBigNumber": true
+    }
+  }

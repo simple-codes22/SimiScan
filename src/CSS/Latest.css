@@ -1,0 +1,19 @@
+.latest {
+    margin: 10px;
+    /* display: flex;
+    flex-direction: column; */
+}
+div.title {
+    font-size: 30px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    padding-left: 100px;
+}
+div.list {
+    /* width: 60vw; */
+    justify-self: center;
+    margin: 10px;
+    padding: 5px;
+}

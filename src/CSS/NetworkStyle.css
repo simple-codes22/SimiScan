@@ -1,0 +1,58 @@
+/* Styling for the Network.js page/component */
+
+.network-prompt-base {
+    position: fixed;
+    left:0;right:0;bottom:0;top:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: inherit;
+}
+.network-prompt-cover {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    width: auto;
+    border: 3px solid rgba(255, 255, 255, 0.212);
+    border-radius: 7px;
+    overflow: hidden;
+    background: rgb(43, 47, 85);
+}
+
+.network-prompt-statement {
+    font-size: 19px;
+    margin:20px;
+}
+.network-prompt-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* margin: 10px; */
+    width:100%;
+    margin:0;
+}
+.network-option:link, .network-option:visited {
+    text-decoration: none;
+    color: inherit;
+    background: transparent;
+    border-top: 1.6px solid rgba(255, 255, 255, 0.212);
+    width: 100%;
+    padding: 10px 0;
+    /* padding: 20px 100% */
+}
+.mini-footer {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    font-size: 25px;
+    letter-spacing: 2px;
+    font-family: 'Ms Madi';
+    animation: logo-intro 1s ease-in-out;
+}
+
+@keyframes logo-intro {
+    from {opacity: 0;}
+    to {opacity: 1s;}
+}

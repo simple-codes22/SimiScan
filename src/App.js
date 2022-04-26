@@ -5,6 +5,7 @@ import {
   Route,
 } from 'react-router-dom'
 import Network from './Pages/network';
+import Main from './Pages/Main';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route index path='/' element={<Network />} /> {/* The index/default page */}
           <Route path='*' element={<Network />} />
+          <Route path='/:network' element={<Main />} />
         </Routes>
 
       </Router>
