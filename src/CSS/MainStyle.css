@@ -58,3 +58,13 @@ div.tx-search {
     background: rgb(223, 229, 255);
     color: rgba(0, 0, 0, 0.844);
 }
+.list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+}
+.line {
+    background: white;
+    width:100%;
+}

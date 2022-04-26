@@ -1,0 +1,27 @@
+.block-individ {
+    display: flex;
+    padding: 5px;
+    border-bottom: 1px solid rgba(227, 229, 245, 0.533);
+}
+.block-individ > div {
+    margin:30px;
+}
+.block-number {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+}
+.block-hash {
+    padding:5px;
+    font-size: 14px;
+    color:rgba(255, 255, 255, 0.536)
+}
+.block-transactions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.block-link:link, .block-link:visited {
+    color:var(--color);
+}

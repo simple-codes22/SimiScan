@@ -1,0 +1,31 @@
+.tx-individ {
+    display: flex;
+    padding-left: 300px;
+    padding: 5px;
+    border-bottom: 1px solid rgba(227, 229, 245, 0.533);
+}
+.tx-individ > div {
+    margin:30px;
+}
+
+.tx-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tx-time {
+    color: rgba(255, 255, 255, 0.74);
+    font-size: 14px;
+    padding: 5px;
+}
+
+.block-transactions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tx-link:link, .tx-link:visited {
+    color:var(--color);
+}

@@ -20,8 +20,8 @@ const Main = () => {
         </button>
       </div>
       <div className="latest-section">
-          <LatestBlocks ethNetwork={network} />
           <LatestTransactions ethNetwork={network} />
+          <LatestBlocks ethNetwork={network} />
       </div>
     </main>
   )
