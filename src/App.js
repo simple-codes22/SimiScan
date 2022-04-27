@@ -5,7 +5,7 @@ import {
   Route,
 } from 'react-router-dom'
 import Network from './Pages/network';
-import Main from './Pages/Main';
+import Main from './Pages/main';
 
 function App() {
   return (
