@@ -1,8 +1,14 @@
-import React from 'react'
+import { useParams } from 'react-router-dom';
+import NetworkInfo from '../components/NetworkInfo';
 
 const Transaction = () => {
+  const { network, hash } = useParams();
+  
   return (
-    <div>Transaction</div>
+    <div>
+      <NetworkInfo network={network} />
+      Transaction
+    </div>
   )
 }
 

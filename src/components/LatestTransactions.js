@@ -1,4 +1,10 @@
-import { useEffect, useState } from "react";
+/* 
+  The transaction component will be restructured soon.
+  Unnecessary repetitions were spotted during development.
+  But it's still doing it's job.
+*/
+
+import React, { useEffect, useState } from "react";
 import { getProvider, convertToEther } from "../misc/ethTasks";
 import { EllipsizeTx, getCurrentEpoch, getTimeHistory, reduceEthSize } from "../misc/miniTask";
 import { Link } from "react-router-dom";
@@ -32,8 +38,8 @@ const LatestTransactions = ({ ethNetwork }) => {
         <div className='list'>
           {getTransactions.transactions.length < 25 ? getTransactions.transactions.map(tx => {
             return (
-              <>
-                <div className='tx-individ' key={getTransactions.transactions.indexOf(tx)}>
+              <React.Fragment key={getTransactions.transactions.indexOf(tx)}>
+                <div className='tx-individ'>
                   <div className='tx-block'>
                     <div className="tx-hash" title={`Hash: ${tx.hash}`}>
                       {EllipsizeTx(tx.hash)}
@@ -43,8 +49,8 @@ const LatestTransactions = ({ ethNetwork }) => {
                     </div>
                   </div>
                   <div className="tx-main">
-                    <div className="tx-from">From <Link className='tx-link' to='#'>{tx.from}</Link></div>
-                    <div className="tx-to">To <Link className='tx-link' to='#'>{tx.to}</Link></div>
+                    <div className="tx-from">From <Link className='tx-link' to={`address/${tx.from}`}>{tx.from}</Link></div>
+                    <div className="tx-to">To <Link className='tx-link' to={`address/${tx.to}`}>{tx.to}</Link></div>
                   </div>
                   <div className='tx-value'>
                     {/* Money amount transferred */}
@@ -52,13 +58,13 @@ const LatestTransactions = ({ ethNetwork }) => {
                   </div>
                 </div>
                 <div className='line'></div>
-              </>
+              </React.Fragment>
             )
           }) :
           getTransactions.transactions.slice(0, 25).map(tx => {
             return (
-              <>
-                <div className='tx-individ' key={getTransactions.transactions.indexOf(tx)}>
+              <React.Fragment key={getTransactions.transactions.indexOf(tx)}>
+                <div className='tx-individ'>
                   <div className='tx-block'>
                     <div className="tx-hash" title={`Hash: ${tx.hash}`}>
                       {EllipsizeTx(tx.hash)}
@@ -68,8 +74,8 @@ const LatestTransactions = ({ ethNetwork }) => {
                     </div>
                   </div>
                   <div className="tx-main">
-                    <div className="tx-from">From <Link className='tx-link' to='#'>{tx.from}</Link></div>
-                    <div className="tx-to">To <Link className='tx-link' to='#'>{tx.to}</Link></div>
+                    <div className="tx-from">From <Link className='tx-link' to={`address/${tx.from}`}>{tx.from}</Link></div>
+                    <div className="tx-to">To <Link className='tx-link' to={`address/${tx.to}`}>{tx.to}</Link></div>
                   </div>
                   <div className='tx-value'>
                     {/* Money amount transferred */}
@@ -77,7 +83,7 @@ const LatestTransactions = ({ ethNetwork }) => {
                   </div>
                 </div>
                 <div className='line'></div>
-              </>
+              </React.Fragment>
             )
           })
         }
