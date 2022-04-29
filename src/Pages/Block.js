@@ -7,7 +7,16 @@ const Block = () => {
   return (
     <div>
       <NetworkInfo network={network} />
-      Block
+      
+      <section className="blk-section">
+        <div className="blk-id">
+          <div className="block-num"></div>
+          <div className="blk-hash"></div>
+        </div>
+        <div className="blk-txns">
+          
+        </div>
+      </section>
     </div>
   )
 }

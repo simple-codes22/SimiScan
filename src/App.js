@@ -10,6 +10,7 @@ import Transaction from './Pages/transaction';
 import Block from './Pages/block';
 import Address from './Pages/address';
 import Token from './Pages/token';
+import { WrongPage } from './Pages/errors';
 
 function App() {
   return (
@@ -19,8 +20,8 @@ function App() {
         
         <Routes>
           <Route index path='/' element={<Network />} /> {/* The index/default page */}
-          <Route path='*' element={<Network />} />
           <Route path='/:network' element={<Main />} />
+          <Route path='*' element={<WrongPage />} />
           <Route path='/:network/tx/:hash' element={<Transaction />} />
           <Route path='/:network/address/:hash' element={<Address />} />
           <Route path='/:network/block/:hash' element={<Block />} />

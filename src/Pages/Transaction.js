@@ -8,6 +8,7 @@ const Transaction = () => {
     <div>
       <NetworkInfo network={network} />
       Transaction
+      <section></section>
     </div>
   )
 }
