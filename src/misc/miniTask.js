@@ -1,4 +1,5 @@
 export const Capitalize = (word) => {
+  // The function capitalizes a word (self explanatory)
   return word[0].toUpperCase() + word.slice(1);
 };
 
@@ -42,3 +43,4 @@ export const reduceEthSize = (eth) => {
   }
   return eth;
 }
+

@@ -3,7 +3,7 @@ import NetworkInfo from '../components/NetworkInfo';
 
 const Transaction = () => {
   const { network, hash } = useParams();
-  
+  console.log(hash)
   return (
     <div>
       <NetworkInfo network={network} />

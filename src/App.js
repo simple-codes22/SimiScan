@@ -9,6 +9,7 @@ import Main from './Pages/main';
 import Transaction from './Pages/transaction';
 import Block from './Pages/block';
 import Address from './Pages/address';
+import Token from './Pages/token';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path='/:network/tx/:hash' element={<Transaction />} />
           <Route path='/:network/address/:hash' element={<Address />} />
           <Route path='/:network/block/:hash' element={<Block />} />
+          <Route path='/:network/token/:hash' element={<Token />} />
         </Routes>
 
       </Router>
