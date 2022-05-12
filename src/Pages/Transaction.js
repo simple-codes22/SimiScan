@@ -7,10 +7,9 @@ const Transaction = () => {
   return (
     <div>
       <NetworkInfo network={network} />
-      Transaction
       <section></section>
     </div>
   )
 }
 
-export default Transaction
+export default Transaction;
