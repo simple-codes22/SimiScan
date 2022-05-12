@@ -7,3 +7,8 @@
 
 Etherscan is a minified block explorer and analytics platform for ethereum, drawing inspiration from [etherscan.io](https://etherscan.io)
 
+## Web Technologied used
+- ReactJS
+- [Ethers.js](https://docs.ethers.io/v5/)
+- [Infura.io](https://infura.io) (as the web3 provider)
+
