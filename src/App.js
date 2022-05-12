@@ -22,7 +22,7 @@ function App() {
           <Route index path='/' element={<Network />} /> {/* The index/default page */}
           <Route path='/:network' element={<Main />} />
           <Route path='*' element={<WrongPage />} />
-          <Route path='/:network/tx/:hash' element={<Transaction />} />
+          <Route path='/:network/txn/:hash' element={<Transaction />} />
           <Route path='/:network/address/:hash' element={<Address />} />
           <Route path='/:network/block/:hash' element={<Block />} />
           <Route path='/:network/token/:hash' element={<Token />} />

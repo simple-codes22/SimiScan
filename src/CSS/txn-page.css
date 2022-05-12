@@ -1,0 +1,16 @@
+/* Styling for the transaction page (transaction.js) */
+
+.txn-page-title {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    align-items: flex-start;
+}
+.txn-page-main {
+    font-size: 32px;
+    margin: 5px;
+}
+.txn-page-subtitle {
+    margin: 5px;
+    
+}

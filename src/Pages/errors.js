@@ -7,6 +7,7 @@ export const WrongPage = () => {
     useEffect(() => {
         document.title = 'Wrong Page 💀'
         setTimeout(() => {
+            document.title = 'SimiScan';
             navigate('/mainnet')
         }, 7000)
     })
