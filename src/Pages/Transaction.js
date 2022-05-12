@@ -10,7 +10,6 @@ import "../CSS/txn-page.css";
 const Transaction = () => {
   const { network, hash } = useParams();
   const [txnDetails, setTxnDetails] = useState(null);
-  
 
   useEffect(() => {
     const txnPageDefaultWorks = async () => {
@@ -19,7 +18,7 @@ const Transaction = () => {
       return setTxnDetails(transactionDetails);
     };
 
-    // txnPageDefaultWorks()
+    // txnPageDefaultWorks();
   }, [hash, network]);
   console.log(txnDetails);
 
@@ -29,45 +28,60 @@ const Transaction = () => {
       <main>
         <section className="txn-page-title">
           <div className="txn-page-main">Transaction</div>
-          <div
-            title="Click to copy to Clipboard"
-            className="txn-page-subtitle"
-          >
-            {hash} 
-            {/* <span onClick={}></span> */}
+          <div title="Click to copy to Clipboard" className="txn-page-subtitle">
+            {hash}
+            <ToggleCopy />
           </div>
         </section>
         {txnDetails !== null ? (
           <section className="txn-page-details">
             <table className="txn-page-transfer-details">
-              <tr className="txn-page-tr" id="txn-page-block">
-                <td>Block Number:</td>
-                <td>
-                  <Link to={`/${network}/block/${txnDetails.blockNumber}`} className='txn-page-link'>{txnDetails.blockNumber}</Link>
-                </td>
-              </tr>
-              <tr className="txn-page-tr" id="txn-page-from">
-                <td>From:</td>
-                <td>
-                  <Link to={`/${network}/address/${txnDetails.from}`} className='txn-page-link'>{txnDetails.from}</Link>
-                </td>
-              </tr>
-              <tr className="txn-page-tr" id="txn-page-to">
-                <td>To:</td>
-                <td>
-                  <Link to={`/${network}/address/${txnDetails.to}`} className='txn-page-link'>{txnDetails.to}</Link>
-                </td>
-              </tr>
-              <tr className="txn-page-tr" id="txn-page-value">
-                <td>Value:</td> <td>{convertToEther(txnDetails.value)} Eth</td>
-              </tr>
-              <tr className="txn-page-tr" id="txn-page-gas-price">
-                <td>Gas Price:</td>
-                <td>
-                  {convertToEther(txnDetails.gasPrice)} Eth 
-                  ({convertToGwei(txnDetails.gasPrice)}) Gwei
-                </td>
-              </tr>
+              <tbody>
+                <tr className="txn-page-tr" id="txn-page-block">
+                  <td>Block Number:</td>
+                  <td>
+                    <Link
+                      to={`/${network}/block/${txnDetails.blockNumber}`}
+                      className="txn-page-link"
+                    >
+                      {txnDetails.blockNumber} <ToggleCopy />
+                    </Link>
+                  </td>
+                </tr>
+                <tr className="txn-page-tr" id="txn-page-from">
+                  <td>From:</td>
+                  <td>
+                    <Link
+                      to={`/${network}/address/${txnDetails.from}`}
+                      className="txn-page-link"
+                    >
+                      {txnDetails.from} <ToggleCopy />
+                    </Link>
+                  </td>
+                </tr>
+                <tr className="txn-page-tr" id="txn-page-to">
+                  <td>To:</td>
+                  <td>
+                    <Link
+                      to={`/${network}/address/${txnDetails.to}`}
+                      className="txn-page-link"
+                    >
+                      {txnDetails.to} <ToggleCopy />
+                    </Link>
+                  </td>
+                </tr>
+                <tr className="txn-page-tr" id="txn-page-value">
+                  <td>Value:</td>{" "}
+                  <td>{convertToEther(txnDetails.value)} Eth</td>
+                </tr>
+                <tr className="txn-page-tr" id="txn-page-gas-price">
+                  <td>Gas Price:</td>
+                  <td>
+                    {convertToEther(txnDetails.gasPrice)} Eth (
+                    {convertToGwei(txnDetails.gasPrice)}) Gwei
+                  </td>
+                </tr>
+              </tbody>
             </table>
           </section>
         ) : (
