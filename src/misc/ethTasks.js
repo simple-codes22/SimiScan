@@ -7,6 +7,10 @@ export const getProvider = (ethNetwork) => {
 }
 
 export const convertToEther = (bigNumber_) => {
-    /* This function converts a bigNumber format to Ether */
+    /* This function converts a bigNumber format of a wei value to Ether */
     return ethers.utils.formatEther(bigNumber_);
+}
+export const convertToGwei = (bigNumber_) => {
+    /* This function converts a bigNumber format of a wei value to Gwei */
+    return ethers.utils.formatUnits(bigNumber_, 'gwei')
 }

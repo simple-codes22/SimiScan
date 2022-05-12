@@ -12,5 +12,24 @@
 }
 .txn-page-subtitle {
     margin: 5px;
-    
+}
+
+.txn-page-details {
+    display: flex;
+    justify-content: center;
+    margin:10px;
+}
+table.txn-page-transfer-details {
+    width:70vw;
+}
+.txn-page-tr {
+    height:40px;
+    border-bottom: 1px solid rgba(227, 229, 245, 0.533);
+}
+.txn-page-tr > td {
+    margin:10px;
+    text-align: start;
+}
+.txn-page-link:link, .txn-page-link:visited {
+    color: var(--color);
 }
