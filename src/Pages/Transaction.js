@@ -7,7 +7,14 @@ const Transaction = () => {
   return (
     <div>
       <NetworkInfo network={network} />
-      <section></section>
+      <section>
+        <section className="title">
+          Address
+          <div className="subtitle">
+            {hash}
+          </div>
+        </section>
+      </section>
     </div>
   )
 }
