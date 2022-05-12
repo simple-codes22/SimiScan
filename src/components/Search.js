@@ -23,7 +23,7 @@ const Search = ({ ethNetwork }) => {
         if (searchInfo.length > 42) {
             provider.getTransaction(searchInfo).then(resp => {
                 console.log(resp)
-                return navigate(`${filters[2]}/${searchInfo}`)
+                return navigate(`${filters[0]}/${searchInfo}`)
             })
         }
         if (searchInfo.length === 42) {
