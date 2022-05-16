@@ -1,8 +1,14 @@
+/* The Transaction details page */
+
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import NetworkInfo from "../components/NetworkInfo";
-import { getProvider } from "../misc/ethTasks";
-import { convertToEther, convertToGwei } from "../misc/ethTasks";
+import { 
+  convertToEther, 
+  convertToGwei, 
+  getProvider, 
+  ExchangeRate 
+} from "../misc/ethTasks";
 import Spinner from "../misc/spinner";
 import { ToggleCopy } from "../misc/copy";
 import "../CSS/txn-page.css";
@@ -17,10 +23,8 @@ const Transaction = () => {
       const transactionDetails = await provider.getTransaction(hash);
       return setTxnDetails(transactionDetails);
     };
-
-    // txnPageDefaultWorks();
+    txnPageDefaultWorks();
   }, [hash, network]);
-  console.log(txnDetails);
 
   return (
     <div>
@@ -30,7 +34,7 @@ const Transaction = () => {
           <div className="txn-page-main">Transaction</div>
           <div title="Click to copy to Clipboard" className="txn-page-subtitle">
             {hash}
-            <ToggleCopy />
+            <ToggleCopy number='one' />
           </div>
         </section>
         {txnDetails !== null ? (
@@ -44,8 +48,9 @@ const Transaction = () => {
                       to={`/${network}/block/${txnDetails.blockNumber}`}
                       className="txn-page-link"
                     >
-                      {txnDetails.blockNumber} <ToggleCopy />
+                      {txnDetails.blockNumber} 
                     </Link>
+                    <ToggleCopy number='two' />
                   </td>
                 </tr>
                 <tr className="txn-page-tr" id="txn-page-from">
@@ -55,8 +60,9 @@ const Transaction = () => {
                       to={`/${network}/address/${txnDetails.from}`}
                       className="txn-page-link"
                     >
-                      {txnDetails.from} <ToggleCopy />
+                      {txnDetails.from} 
                     </Link>
+                    <ToggleCopy number='three' />
                   </td>
                 </tr>
                 <tr className="txn-page-tr" id="txn-page-to">
@@ -66,19 +72,23 @@ const Transaction = () => {
                       to={`/${network}/address/${txnDetails.to}`}
                       className="txn-page-link"
                     >
-                      {txnDetails.to} <ToggleCopy />
+                      {txnDetails.to} 
                     </Link>
+                    <ToggleCopy number='four' />
                   </td>
                 </tr>
                 <tr className="txn-page-tr" id="txn-page-value">
-                  <td>Value:</td>{" "}
-                  <td>{convertToEther(txnDetails.value)} Eth</td>
+                  <td>Value:</td>
+                  <td>
+                    {convertToEther(txnDetails.value)} Eth
+                    <ExchangeRate price={convertToEther(txnDetails.value)} />
+                  </td>
                 </tr>
                 <tr className="txn-page-tr" id="txn-page-gas-price">
                   <td>Gas Price:</td>
                   <td>
                     {convertToEther(txnDetails.gasPrice)} Eth (
-                    {convertToGwei(txnDetails.gasPrice)}) Gwei
+                    {convertToGwei(txnDetails.gasPrice)} Gwei)
                   </td>
                 </tr>
               </tbody>

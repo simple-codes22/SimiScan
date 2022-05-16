@@ -6,8 +6,8 @@ const contentCopy =`
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
         role="img"
-        width="1em"
-        height="1em"
+        width="1rem"
+        height="1rem"
         preserveAspectRatio="xMidYMid meet"
         viewBox="0 0 24 24"
       >
@@ -24,8 +24,8 @@ const Copied = `
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
         role="img"
-        width="1em"
-        height="1em"
+        width="1rem"
+        height="1rem"
         preserveAspectRatio="xMidYMid meet"
         viewBox="0 0 24 24"
       >
@@ -34,15 +34,17 @@ const Copied = `
           d="M19 19H5v-2h14v2Zm-9-4.58l-4-4l1.41-1.41L10 11.59L16.59 5L18 6.42l-8 8Z"
         />
       </svg>
-
+      <span className='Copied'>Copied</span>
 `
-export const ToggleCopy = () => {
+export const ToggleCopy = ({ number }) => {
+  const className_ = `special-copy ${number}`
+
   return (
-    <span className='special-copy' onClick={
+    <span title='Copy details' className={className_} onClick={
       () => {
-        document.querySelector('span.special-copy').innerHTML = Copied;
+        document.querySelector(`.${number}`).innerHTML = Copied;
         setTimeout(() => {
-          document.querySelector('span.special-copy').innerHTML = contentCopy;
+          document.querySelector(`.${number}`).innerHTML = contentCopy;
         }, 5000);
         return
       }
@@ -51,8 +53,8 @@ export const ToggleCopy = () => {
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
         role="img"
-        width="1em"
-        height="1em"
+        width="1rem"
+        height="1rem"
         preserveAspectRatio="xMidYMid meet"
         viewBox="0 0 24 24"
       >
