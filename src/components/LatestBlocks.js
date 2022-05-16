@@ -51,7 +51,7 @@ const LatestBlocks = ({ ethNetwork }) => {
               <div className='block-individ' key={getBlocks.indexOf(block)}>
                 <div className='block-number'>
                   <div className="block-number-main">
-                    <Link className='block-link' to='/'>{block.number}</Link>
+                    <Link className='block-link' to={`block/${block.number}`}>{block.number}</Link>
                   </div>
                   <div className="block-hash" title={`Hash: ${block.hash}`}>
                     {Ellipsize(block.hash)}

@@ -24,7 +24,7 @@ function App() {
           <Route path='*' element={<WrongPage />} />
           <Route path='/:network/txn/:hash' element={<Transaction />} />
           <Route path='/:network/address/:hash' element={<Address />} />
-          <Route path='/:network/block/:hash' element={<Block />} />
+          <Route path='/:network/block/:number' element={<Block />} />
           <Route path='/:network/token/:hash' element={<Token />} />
         </Routes>
 
