@@ -20,8 +20,7 @@ const Search = ({ ethNetwork }) => {
                     console.log(resp)
                     return navigate(`${filters[1]}/${searchInfo}`)
                 })
-            } 
-            return navigate(`/${ethNetwork}/error`)
+            }
         }
         if (searchInfo.length > 42) {
             provider.getTransaction(searchInfo).then(resp => {
