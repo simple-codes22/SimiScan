@@ -6,8 +6,8 @@ import {
 } from 'react-router-dom'
 import Network from './Pages/network';
 import Main from './Pages/main';
-import Transaction from './Pages/transaction-page'; // Had to change the name from "transaction" this because of netlify issues
-import Block from './Pages/block';
+import Transaction from './Pages/transaction-page';
+import Block from './Pages/block-page';
 import Address from './Pages/address';
 import Token from './Pages/token';
 import { NotFoundResult, WrongPage } from './Pages/errors';
