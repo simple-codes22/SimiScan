@@ -32,7 +32,7 @@ const Transaction = () => {
       <main>
         <section className="txn-page-title">
           <div className="txn-page-main">Transaction</div>
-          <div title="Click to copy to Clipboard" className="txn-page-subtitle">
+          <div className="txn-page-subtitle">
             {hash}
             <ToggleCopy number='one' />
           </div>

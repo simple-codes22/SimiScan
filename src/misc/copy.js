@@ -40,11 +40,14 @@ export const ToggleCopy = ({ number }) => {
   const className_ = `special-copy ${number}`
 
   return (
-    <span title='Copy details' className={className_} onClick={
+    <span title='Copy to Clipboard' className={className_} onClick={
       () => {
-        document.querySelector(`.${number}`).innerHTML = Copied;
+        const copyBtn = document.querySelector(`.${number}`)
+        copyBtn.innerHTML = Copied;
+        const text = copyBtn.parentNode.firstChild.textContent;
+        navigator.clipboard.writeText(text)
         setTimeout(() => {
-          document.querySelector(`.${number}`).innerHTML = contentCopy;
+          copyBtn.innerHTML = contentCopy;
         }, 5000);
         return
       }

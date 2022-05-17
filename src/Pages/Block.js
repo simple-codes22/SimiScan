@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import NetworkInfo from '../components/NetworkInfo';
-import { getProvider } from '../misc/ethTasks';
+import { convertToGwei, getProvider } from '../misc/ethTasks';
+import { ToggleCopy } from '../misc/copy';
+import Spinner from '../misc/spinner';
+import '../CSS/blocks-page.css';
 
 const Block = () => {
   const { network, number } = useParams();
@@ -17,7 +20,7 @@ const Block = () => {
     getBlockDetails();
 
   }, [network, number])
-  console.log(blockDetails);
+  // console.log(blockDetails);
 
   return (
     <div>
@@ -25,18 +28,121 @@ const Block = () => {
       
       <section className="blk-section">
         <div className="blk-id">
+          <div className="blk-title">
+            Block
+          </div>
           <div className="blk-num">
-            {number}
-          </div>
-          <div className="blk-hash">
-
+            {number} <ToggleCopy number='one' />
           </div>
         </div>
-        <div className="blk-txns">
-          
+        {blockDetails !== null ? 
+        <>
+        <div className='blk-overview'>
+        <table className='blk-overview-table'>
+            <thead>
+              <tr>
+                <td>
+                  Overview
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  Block hash:
+                </td>
+                <td>
+                  {blockDetails.hash} <ToggleCopy number="two" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Miner:
+                </td>
+                <td>
+                  {blockDetails.miner} <ToggleCopy number="three" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Nonce:
+                </td>
+                <td>
+                  {blockDetails.nonce} <ToggleCopy number="four" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Gas limit:
+                </td>
+                <td>
+                  {convertToGwei(blockDetails.gasLimit)} Gwei
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Transactions completed:
+                </td>
+                <td>
+                  {blockDetails.transactions.length === 0 ?
+                    <>No transaction completed</> :
+                    <>
+                      {blockDetails.transactions.length === 1 ?
+                        <>
+                          1 transaction completed
+                        </> :
+                        <>
+                          {blockDetails.transactions.length} transactions completed
+                        </>
+                      }
+                    </>
+                  }
+                </td>
+              </tr>
+            </tbody>
+        </table>
         </div>
+        <div className="blk-recent-tx">
+          <div className="blk-recent-tx-title">
+            Recent Transactions From Block 💸💸
+          </div>
+          {blockDetails !== null ? 
+          <>
+            {blockDetails.transactions.length < 30 ? 
+              blockDetails.transactions.map(tx => {
+                return (
+                  <div className='blk-individ-tx'>
+                    <div className="blk-individ-tx-main">
+                      {tx} <ToggleCopy />
+                    </div>
+                    <div className='blk-individ-tx-link'>
+                      <Link className='blk-link-main' to={`/${network}/txn/${tx}`}>View transaction details 👆👆</Link>
+                    </div>
+                  </div>
+                )
+              })
+            : 
+              blockDetails.transactions.slice(0, 35).map(tx => {
+                return(
+                  <div className='blk-individ-tx'>
+                    <div className="blk-individ-tx-main">
+                      {tx} <ToggleCopy />
+                    </div>
+                    <div className='blk-individ-tx-link'>
+                      <Link className='blk-link-main' to={`/${network}/txn/${tx}`}>View transaction details 👆👆</Link>
+                    </div>
+                  </div>
+                )
+              })
+            }
+          </> : 
+          <></>}
+          </div>
+        </> : 
+        <Spinner /> }
       </section>
     </div>
+    
   )
 }
 

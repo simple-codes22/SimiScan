@@ -14,11 +14,14 @@ const Search = ({ ethNetwork }) => {
         const provider = getProvider(ethNetwork);
         if (searchInfo.slice(0, 2) !== '0x') {
             // To check if the search info is not a hexadecimal
-
-            provider.getBlock(parseInt(searchInfo)).then(resp => {
-                console.log(resp)
-                return navigate(`${filters[1]}/${searchInfo}`)
-            })
+            const pattern = /[a-z]/i;
+            if (!pattern.test(searchInfo)) {
+                provider.getBlock(parseInt(searchInfo)).then(resp => {
+                    console.log(resp)
+                    return navigate(`${filters[1]}/${searchInfo}`)
+                })
+            } 
+            return navigate(`/${ethNetwork}/error`)
         }
         if (searchInfo.length > 42) {
             provider.getTransaction(searchInfo).then(resp => {
@@ -36,8 +39,7 @@ const Search = ({ ethNetwork }) => {
             }).catch(err => {
                 // I haven't set out what to do yet if an error occurs
                 // I'll maybe navigate to a 'not found' page
-
-                console.log(err);
+                return navigate(`/${ethNetwork}/error`)
             })
         }
     }

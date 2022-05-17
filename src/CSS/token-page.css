@@ -1,0 +1,45 @@
+.token-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.token-id {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    margin: 20px;
+    padding-left: 3%;
+}
+.token-topic {
+    padding: 5px;
+    font-size: 32px;
+    text-align: start;
+}
+
+.token-overview {
+    padding:5px;
+    width: 70vw;
+    display: flex;
+    justify-content: center;
+}
+.token-hash {
+    padding: 7px;
+    letter-spacing: .4px;
+}
+
+.token-overview  thead > tr > td {
+    text-align: start;
+    font-size: 1.2rem;
+    padding: 5px 0px;
+    letter-spacing: .5px;
+}
+.token-overview tbody > tr {
+    height: 40px;
+}
+
+.token-overview tbody td {
+    margin: 10px;
+    padding: 5px;
+    text-align: start;
+    font-size: 18px;
+}
