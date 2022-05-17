@@ -8,7 +8,7 @@ import Network from './Pages/network';
 import Main from './Pages/main';
 import Transaction from './Pages/transaction-page';
 import Block from './Pages/block-page';
-import Address from './Pages/address';
+import Address from './Pages/address-page';
 import Token from './Pages/token';
 import { NotFoundResult, WrongPage } from './Pages/errors';
 
