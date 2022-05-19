@@ -1,4 +1,5 @@
 /* Styling for the main page component (main.js) */
+/* @import url('./responsive/main-responsive.css'); */
 
 .network-info{
     height: 40px;
@@ -69,4 +70,21 @@ div.tx-search {
 .line {
     background: white;
     width:100%;
+}
+
+@media screen and (max-width: 860px) {
+    .search-input {
+        width: 350px;
+        height: 29px;
+        padding: 8px;
+        margin: 5px;
+        font-size: 15px;
+    }
+    .search-input::placeholder {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    
 }

@@ -31,3 +31,18 @@
 .tx-link:link, .tx-link:visited {
     color:var(--color);
 }
+@media screen and (max-width:850px) {
+    .tx-individ {
+        flex-wrap: wrap;
+        padding-left: 45px;
+        justify-content: center;
+    }
+    .tx-individ > div {
+        margin: 8px;
+    }
+}
+@media screen and (max-width: 470px) {
+    .tx-individ {
+        padding-left: 20px;
+    }
+}

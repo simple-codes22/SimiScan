@@ -27,3 +27,12 @@
 .block-link:link, .block-link:visited {
     color:var(--color);
 }
+@media screen and (max-width:850px) {
+    .block-individ > div {
+        margin: 10px 25px;
+    }
+    .block-individ {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
