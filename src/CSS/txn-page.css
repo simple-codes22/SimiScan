@@ -39,7 +39,7 @@ table.txn-page-transfer-details {
         margin: 5px;
     }
     .txn-page-transfer-details {
-        width: 85vw;
+        width: 95vw;
     }
     .txn-page-tr {
         height: 35px;
@@ -48,9 +48,7 @@ table.txn-page-transfer-details {
         margin: 5px;
     }
 }
-@media screen and (max-width:450px) {
-    
-}
+
 @media screen and (max-width: 350px) {
 
 }
