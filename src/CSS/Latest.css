@@ -27,3 +27,11 @@ div.list {
         margin: 6px;
     }
 }
+@media screen and (max-width:450px) {
+    .latest {
+        margin: 2px;
+    }
+    div.list {
+        margin: 3px;
+    }
+}

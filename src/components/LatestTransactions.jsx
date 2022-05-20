@@ -56,6 +56,9 @@ const LatestTransactions = ({ ethNetwork }) => {
                     {/* Money amount transferred */}
                     {convertToEther(tx.value)} Eth transferred 💸💸
                   </div>
+                  <div className="tx-link-details">
+                    <Link className='tx-link' to={`txn/${tx.hash}`}>Check details 💸💸</Link>
+                  </div>
                 </div>
                 <div className='line'></div>
               </React.Fragment>
@@ -80,6 +83,9 @@ const LatestTransactions = ({ ethNetwork }) => {
                   <div className='tx-value'>
                     {/* Money amount transferred */}
                     {reduceEthSize(convertToEther(tx.value))} Eth transferred 💸💸
+                  </div>
+                  <div className="tx-link-details">
+                    <Link className='tx-link' to={`txn/${tx.hash}`}>Check details 💸💸</Link>
                   </div>
                 </div>
                 <div className='line'></div>

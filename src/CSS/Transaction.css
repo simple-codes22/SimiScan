@@ -41,8 +41,11 @@
         margin: 8px;
     }
 }
-@media screen and (max-width: 470px) {
+@media screen and (max-width: 450px) {
     .tx-individ {
-        padding-left: 20px;
+        padding-left: 5px;
+    }
+    .tx-main {
+        display: none;
     }
 }
