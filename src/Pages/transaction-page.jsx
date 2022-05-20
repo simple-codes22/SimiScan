@@ -9,6 +9,7 @@ import {
   getProvider, 
   ExchangeRate 
 } from "../misc/ethTasks";
+import { Ellipsize10x } from "../misc/miniTask";
 import Spinner from "../misc/spinner";
 import { ToggleCopy } from "../misc/copy";
 import "../CSS/txn-page.css";
@@ -23,7 +24,7 @@ const Transaction = () => {
       const transactionDetails = await provider.getTransaction(hash);
       return setTxnDetails(transactionDetails);
     };
-    txnPageDefaultWorks();
+    // txnPageDefaultWorks();
   }, [hash, network]);
 
   return (
@@ -33,7 +34,7 @@ const Transaction = () => {
         <section className="txn-page-title">
           <div className="txn-page-main">Transaction</div>
           <div className="txn-page-subtitle">
-            {hash}
+            {Ellipsize10x(hash)}
             <ToggleCopy number='one' />
           </div>
         </section>
@@ -59,8 +60,9 @@ const Transaction = () => {
                     <Link
                       to={`/${network}/address/${txnDetails.from}`}
                       className="txn-page-link"
+                      title={txnDetails.from}
                     >
-                      {txnDetails.from} 
+                      {Ellipsize10x(txnDetails.from)} 
                     </Link>
                     <ToggleCopy number='three' />
                   </td>
@@ -71,8 +73,9 @@ const Transaction = () => {
                     <Link
                       to={`/${network}/address/${txnDetails.to}`}
                       className="txn-page-link"
+                      title={txnDetails.to}
                     >
-                      {txnDetails.to} 
+                      {Ellipsize10x(txnDetails.to)} 
                     </Link>
                     <ToggleCopy number='four' />
                   </td>
@@ -81,7 +84,9 @@ const Transaction = () => {
                   <td>Value:</td>
                   <td>
                     {convertToEther(txnDetails.value)} Eth
-                    {' '}(<ExchangeRate price={convertToEther(txnDetails.value)} />)
+                    {' '}
+                    {/* (<ExchangeRate price={convertToEther(txnDetails.value)} />) */}
+                    ($123)
                   </td>
                 </tr>
                 <tr className="txn-page-tr" id="txn-page-gas-price">

@@ -34,8 +34,19 @@ table.txn-page-transfer-details {
     color: var(--color);
 }
 
-@media screen and (max-width:850px) {
-
+@media screen and (max-width:700px) {
+    .txn-page-details {
+        margin: 5px;
+    }
+    .txn-page-transfer-details {
+        width: 85vw;
+    }
+    .txn-page-tr {
+        height: 35px;
+    }
+    .txn-page-tr > td {
+        margin: 5px;
+    }
 }
 @media screen and (max-width:450px) {
     

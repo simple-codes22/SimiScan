@@ -7,6 +7,10 @@ export const Ellipsize = (hash) => {
   return `${hash.slice(0, 5)}...${hash.slice(hash.length-3, hash.length)}`
 }
 
+export const Ellipsize10x = (hash) => {
+  return `${hash.slice(0, 12)}...${hash.slice(hash.length-3, hash.length)}`
+}
+
 export const EllipsizeTx = (hash) => {
   return `${hash.slice(0, 15)}...`
 }
