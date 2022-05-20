@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import NetworkInfo from '../components/NetworkInfo';
 import { convertToGwei, getProvider } from '../misc/ethTasks';
+import { Ellipsize10x } from '../misc/miniTask';
 import { ToggleCopy } from '../misc/copy';
 import Spinner from '../misc/spinner';
 import '../CSS/blocks-page.css';
@@ -20,7 +21,6 @@ const Block = () => {
     getBlockDetails();
 
   }, [network, number])
-  // console.log(blockDetails);
 
   return (
     <div>
@@ -52,7 +52,7 @@ const Block = () => {
                   Block hash:
                 </td>
                 <td>
-                  {blockDetails.hash} <ToggleCopy number="two" />
+                  {Ellipsize10x(blockDetails.hash)} <ToggleCopy number="two" />
                 </td>
               </tr>
               <tr>
@@ -60,7 +60,7 @@ const Block = () => {
                   Miner:
                 </td>
                 <td>
-                  {blockDetails.miner} <ToggleCopy number="three" />
+                  {Ellipsize10x(blockDetails.miner)} <ToggleCopy number="three" />
                 </td>
               </tr>
               <tr>
@@ -111,9 +111,9 @@ const Block = () => {
             {blockDetails.transactions.length < 30 ? 
               blockDetails.transactions.map(tx => {
                 return (
-                  <div className='blk-individ-tx'>
+                  <div className='blk-individ-tx' key={tx}>
                     <div className="blk-individ-tx-main">
-                      {tx} <ToggleCopy />
+                      {Ellipsize10x(tx)} <ToggleCopy />
                     </div>
                     <div className='blk-individ-tx-link'>
                       <Link className='blk-link-main' to={`/${network}/txn/${tx}`}>View transaction details 👆👆</Link>
@@ -124,9 +124,9 @@ const Block = () => {
             : 
               blockDetails.transactions.slice(0, 35).map(tx => {
                 return(
-                  <div className='blk-individ-tx'>
+                  <div className='blk-individ-tx' key={tx}>
                     <div className="blk-individ-tx-main">
-                      {tx} <ToggleCopy />
+                      {Ellipsize10x(tx)} <ToggleCopy />
                     </div>
                     <div className='blk-individ-tx-link'>
                       <Link className='blk-link-main' to={`/${network}/txn/${tx}`}>View transaction details 👆👆</Link>

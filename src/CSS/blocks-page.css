@@ -50,6 +50,7 @@
 }
 .blk-individ-tx {
     margin: 10px;
+    font-size: 17px;
 }
 .blk-individ-tx-main {
     padding: 5px;
@@ -58,11 +59,11 @@
     color: var(--color);
 }
 
-@media screen and (max-width:850px) {
-
-}
 @media screen and (max-width:450px) {
-    
+    .blk-overview {
+        width: 90vw;
+        
+    }
 }
 @media screen and (max-width: 350px) {
 
