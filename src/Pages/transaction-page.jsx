@@ -24,7 +24,7 @@ const Transaction = () => {
       const transactionDetails = await provider.getTransaction(hash);
       return setTxnDetails(transactionDetails);
     };
-    // txnPageDefaultWorks();
+    txnPageDefaultWorks();
   }, [hash, network]);
 
   return (
@@ -85,8 +85,7 @@ const Transaction = () => {
                   <td>
                     {convertToEther(txnDetails.value)} Eth
                     {' '}
-                    {/* (<ExchangeRate price={convertToEther(txnDetails.value)} />) */}
-                    ($123)
+                    (<ExchangeRate price={convertToEther(txnDetails.value)} />)
                   </td>
                 </tr>
                 <tr className="txn-page-tr" id="txn-page-gas-price">
