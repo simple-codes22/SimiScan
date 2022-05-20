@@ -42,7 +42,7 @@ export const ExchangeRate = ({ price }) => {
 
     return (
         <>
-            {typeof getER === 'number' ? <>{` ($${(parseFloat(price) * getER).toFixed(2)})`}</> : <></>}
+            {typeof getER === 'number' ? <>{`$${(parseFloat(price) * getER).toFixed(2)}`}</> : <></>}
         </>
     );
 };

@@ -58,7 +58,7 @@ const Address = () => {
                 Ether Value:
               </td>
               <td>
-                $<ExchangeRate price={convertToEther(addressDetails.balance)} />
+                <ExchangeRate price={convertToEther(addressDetails.balance)} />
               </td>
             </tr>
           </tbody>

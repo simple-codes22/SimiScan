@@ -33,3 +33,13 @@ table.txn-page-transfer-details {
 .txn-page-link:link, .txn-page-link:visited {
     color: var(--color);
 }
+
+@media screen and (max-width:850px) {
+
+}
+@media screen and (max-width:450px) {
+    
+}
+@media screen and (max-width: 350px) {
+
+}

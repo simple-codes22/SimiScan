@@ -46,3 +46,11 @@
     padding: 30px;
     align-self: start;
 }
+
+
+@media screen and (max-width:450px) {
+    .address-hash {
+        padding: 4px;
+        font-size: 14px;
+    }
+}

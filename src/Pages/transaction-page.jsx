@@ -81,7 +81,7 @@ const Transaction = () => {
                   <td>Value:</td>
                   <td>
                     {convertToEther(txnDetails.value)} Eth
-                    <ExchangeRate price={convertToEther(txnDetails.value)} />
+                    {' '}(<ExchangeRate price={convertToEther(txnDetails.value)} />)
                   </td>
                 </tr>
                 <tr className="txn-page-tr" id="txn-page-gas-price">
