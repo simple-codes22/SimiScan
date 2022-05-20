@@ -53,4 +53,8 @@
         padding: 4px;
         font-size: 14px;
     }
+    .address-overview {
+        width: 80vw;
+        padding: 4px;
+    }
 }
