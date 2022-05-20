@@ -2,6 +2,7 @@ import NetworkInfo from "../components/NetworkInfo";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getProvider } from "../misc/ethTasks";
+import { Ellipsize10x } from "../misc/miniTask";
 import { ethers } from "ethers";
 import Spinner from '../misc/spinner';
 import { ToggleCopy } from '../misc/copy';
@@ -38,7 +39,6 @@ const Token = () => {
         }
         getTokenDetails()
     }, [network, hash]);
-    console.log(tokenDetails)
 
     return (
         <div>
@@ -91,7 +91,7 @@ const Token = () => {
                                             Contract address:
                                         </td>
                                         <td>
-                                            {hash} <ToggleCopy number='two' />
+                                            {Ellipsize10x(hash)} <ToggleCopy number='two' />
                                         </td>
                                     </tr>
                                 </tbody>

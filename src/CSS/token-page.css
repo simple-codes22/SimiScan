@@ -45,11 +45,19 @@
 }
 
 @media screen and (max-width:850px) {
-
+    .token-overview {
+        padding: 8px;        
+        width: 95vw;
+    }
+    .token-overview tbody td {
+        font-size: 1rem;
+    }
 }
-@media screen and (max-width:450px) {
-    
-}
-@media screen and (max-width: 350px) {
-
+@media screen and (max-width:480px) {
+    .token-hash {
+        font-size: 12px;
+    }
+    .token-topic {
+        padding: 3px;
+    }
 }
