@@ -44,7 +44,7 @@ export const ToggleCopy = ({ number }) => {
       () => {
         const copyBtn = document.querySelector(`.${number}`)
         copyBtn.innerHTML = Copied;
-        const text = copyBtn.parentNode.firstChild.getAttribute('title');
+        const text = number === 'one' ? copyBtn.parentElement.getAttribute('title') : copyBtn.parentNode.firstChild.getAttribute('title');
         navigator.clipboard.writeText(text)
         setTimeout(() => {
           copyBtn.innerHTML = contentCopy;
