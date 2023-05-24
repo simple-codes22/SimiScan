@@ -31,7 +31,7 @@ const Block = () => {
           <div className="blk-title">
             Block
           </div>
-          <div className="blk-num">
+          <div className="blk-num" title={number}>
             {number} <ToggleCopy number='one' />
           </div>
         </div>

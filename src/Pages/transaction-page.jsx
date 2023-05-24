@@ -33,7 +33,7 @@ const Transaction = () => {
       <main>
         <section className="txn-page-title">
           <div className="txn-page-main">Transaction</div>
-          <div className="txn-page-subtitle">
+          <div className="txn-page-subtitle" title={hash}>
             {Ellipsize10x(hash)}
             <ToggleCopy number='one' />
           </div>
@@ -48,6 +48,7 @@ const Transaction = () => {
                     <Link
                       to={`/${network}/block/${txnDetails.blockNumber}`}
                       className="txn-page-link"
+                      title={txnDetails.blockNumber}
                     >
                       {txnDetails.blockNumber} 
                     </Link>

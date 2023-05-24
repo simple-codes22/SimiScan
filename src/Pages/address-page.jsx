@@ -32,7 +32,7 @@ const Address = () => {
       <section className='address-section'>
         <div className='address-title'>
           <div className="address-topic">Address</div>
-          <div className="address-hash">
+          <div className="address-hash" title={hash}>
             {hash} <ToggleCopy number='one' />
           </div>
         </div>
